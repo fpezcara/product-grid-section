@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-	--color-beige: #d3b08a;
-	--color-brown: #ca8a03;
+  --color-beige: #d3b08a;
+  --color-brown: #ca8a03;
 }

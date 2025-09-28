@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import type { Image } from "../../types";
+import Img from "../Img";
 
 interface CardProps {
   name: string;
@@ -10,25 +11,25 @@ interface CardProps {
 }
 
 const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
-  // console.log("IMAGES", images);
-  // console.log("colors", colors);
-  // console.log("PRICE", price);
   const [selectedColor, setSelectedColor] = useState<string>(colors[0]);
-  const getImagesByColor = () => {
-    return images.filter((image: Image) => image.color === selectedColor);
+
+  const getImagesByColor = (color: string): Array<Image> => {
+    return images.filter((image: Image) => image.color === color);
   };
 
   // TODO: add icon inside the image to allow it to change when clicked (probably use position
   //  relative in container and absolute in the arrow
   const [selectedImage, setSelectedImage] = useState<Image>(
-    getImagesByColor()[0],
+    getImagesByColor(selectedColor)[0],
   );
 
-  console.log("lalalla", getImagesByColor());
   const selectItemColor = (e: React.MouseEvent<HTMLButtonElement>) => {
     setSelectedColor(e.currentTarget.value);
+    setSelectedImage(getImagesByColor(e.currentTarget.value)[0]);
   };
+
   console.log("SELECTED IMG", selectedImage);
+  console.log("SELECTED color", selectedColor);
 
   const bgColorsMap: Record<string, string> = {
     black: "bg-black",
@@ -41,18 +42,13 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
     blue: "bg-blue-700",
   };
 
-  console.log("map colors", bgColorsMap.beige);
+  console.log("images", images);
 
   return (
     <section className="pt-2">
-      <img
-        loading="lazy"
-        className="h-[300px] w-[280px] rounded-lg object-cover"
-        alt={`${selectedImage.color}-${name}`}
-        src={selectedImage.image_url}
-      />
+      <Img selectedImage={selectedImage} name={name} />
       <section className="mt-2 flex flex-col gap-y-3">
-        <p className="text-sm font-light text-gray-400 capitalize">
+        <p className="text-xs font-light text-gray-500 capitalize">
           {selectedColor}
         </p>
         <p>{name}</p>
@@ -69,7 +65,7 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
         <div className="flex gap-2">
           {colors.map((color: string) => (
             <button
-              className={`size-5 rounded-full border border-gray-200 ${bgColorsMap[color]} cursor-pointer`}
+              className={`size-5 rounded-full ring-2 ring-gray-200 focus:outline-3 focus:outline-blue-300 ${bgColorsMap[color]} cursor-pointer`}
               value={color}
               onClick={selectItemColor}
               key={color}

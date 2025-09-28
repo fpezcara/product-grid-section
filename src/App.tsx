@@ -23,8 +23,8 @@ function App() {
     console.error("There was an error fetching data.");
   }
 
-  console.log("query", data?.data);
-  console.log("is it loading?", isLoading);
+  // console.log("query", data?.data);
+  // console.log("is it loading?", isLoading);
   // console.log("isError", isError);
 
   return (

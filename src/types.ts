@@ -21,11 +21,11 @@ interface Inventory {
   color: string;
   size?: string;
   list_price: number;
-  sale_price: number
+  sale_price: number;
   discount?: number;
-  discount_percentage: number
-  sold: number
-  stock: number
+  discount_percentage: number;
+  sold: number;
+  stock: number;
 }
 
 export interface PriceRange {

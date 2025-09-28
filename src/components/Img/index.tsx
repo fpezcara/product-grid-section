@@ -6,15 +6,15 @@ interface ImageProps {
   name: string;
 }
 
-const Image = ({ selectedImage, name }: ImageProps) => {
+const Img = ({ selectedImage, name }: ImageProps) => {
   return (
     <img
       loading="lazy"
-      className="h-[300px] w-[280px] rounded-lg"
+      className="h-[300px] w-[280px] rounded-lg object-cover"
       alt={`${selectedImage.color}-${name}`}
       src={selectedImage.image_url}
     />
   );
 };
 
-export default Image;
+export default Img;
