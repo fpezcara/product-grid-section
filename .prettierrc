@@ -1,16 +1,45 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["clsx", "cva", "cn"],
+  "tailwindFunctions": ["clsx", "cva", "cn", "tw"],
+  "tailwindAttributes": ["class", "className", "ngClass"],
   "printWidth": 80,
   "singleQuote": true,
   "trailingComma": "es5",
   "semi": true,
   "singleAttributePerLine": true,
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "bracketSameLine": false,
+  "jsxSingleQuote": true,
+  "proseWrap": "always",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
   "overrides": [
     {
-      "files": "*.tsx",
+      "files": ["*.md", "*.mdx"],
       "options": {
-        "parser": "typescript"
+        "proseWrap": "preserve",
+        "printWidth": 100
+      }
+    },
+    {
+      "files": ["*.json", "*.jsonc"],
+      "options": {
+        "printWidth": 100,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "singleQuote": false,
+        "printWidth": 100
       }
     }
   ]

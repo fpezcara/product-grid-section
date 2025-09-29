@@ -8,8 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format:check": "npx prettier . --check",
-    "format:write": "npx prettier . --write",
+    "format:check": "prettier . --check --cache",
+    "format:write": "prettier . --write --cache",
+    "format:staged": "prettier --write --cache",
     "prepare": "husky"
   },
   "dependencies": {

@@ -43,21 +43,21 @@ interface LatestArrivalsPagination {
 export interface LatestArrivalsData {
   category: Category;
   collection: Collection;
-  colors: Array<string>;
+  colors: string[];
   created_at: string;
   description: string;
-  images: Array<Image>;
-  inventory: Array<Inventory>;
+  images: Image[];
+  inventory: Inventory[];
   name: string;
   priceRange: PriceRange;
   product_id: string;
   rating: number;
   reviews: number;
-  sizes: Array<string>;
+  sizes: string[];
   sold: number;
 }
 
 export interface LatestArrivals {
-  data: Array<LatestArrivalsData>;
+  data: LatestArrivalsData[];
   pagination: LatestArrivalsPagination;
 }

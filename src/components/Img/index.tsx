@@ -1,27 +1,56 @@
 import type { Image } from '../../types';
 import { RiArrowLeftWideLine, RiArrowRightWideLine } from 'react-icons/ri';
+import { getIndexImage } from '../../utils.ts';
 
 interface ImageProps {
   selectedImage: Image;
   name: string;
+  setSelectedImage: (image: Image) => void;
+  imagesByColor: Image[];
 }
 
-const Img = ({ selectedImage, name }: ImageProps) => {
+const Img = ({
+  selectedImage,
+  name,
+  setSelectedImage,
+  imagesByColor,
+}: ImageProps) => {
+  const currentImageIndex = getIndexImage(imagesByColor, selectedImage);
+  const isArrowHidden = imagesByColor.length === 1;
+
+  const getNextIndex = (direction: 'forward' | 'backward' = 'forward') => {
+    const lastIndex = imagesByColor.length - 1;
+
+    if (direction === 'forward') {
+      return currentImageIndex === lastIndex ? 0 : currentImageIndex + 1;
+    } else {
+      return currentImageIndex === 0 ? lastIndex : currentImageIndex - 1;
+    }
+  };
+
   return (
-    <section className="relative">
-      <div className="absolute">
-        <div className="flex w-[280px] justify-between">
-          <div className="flex h-[300px] w-1/5 items-center justify-center rounded-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50">
-            <RiArrowLeftWideLine className="bottom-8 size-7 text-black" />
+    <section className='relative'>
+      <div className='absolute'>
+        <div className='flex w-[280px] justify-between'>
+          <div
+            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/5 items-center justify-center rounded-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
+            onClick={() =>
+              setSelectedImage(imagesByColor[getNextIndex('backward')])
+            }
+          >
+            <RiArrowLeftWideLine className='bottom-8 size-7 text-black' />
           </div>
-          <div className="flex h-[300px] w-1/5 items-center justify-center rounded-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50">
-            <RiArrowRightWideLine className="size-7 text-black" />
+          <div
+            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/5 items-center justify-center rounded-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
+            onClick={() => setSelectedImage(imagesByColor[getNextIndex()])}
+          >
+            <RiArrowRightWideLine className='size-7 text-black' />
           </div>
         </div>
       </div>
       <img
-        loading="lazy"
-        className="h-[300px] w-[280px] rounded-lg object-cover"
+        loading='lazy'
+        className='h-[300px] w-[280px] rounded-lg object-cover'
         alt={`${selectedImage.color}-${name}`}
         src={selectedImage.image_url}
       />
