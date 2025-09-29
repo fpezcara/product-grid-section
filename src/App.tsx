@@ -1,26 +1,26 @@
-import "./App.css";
-import { useQuery } from "@tanstack/react-query";
-import type { LatestArrivals, LatestArrivalsData } from "./types";
+import './App.css';
+import { useQuery } from '@tanstack/react-query';
+import type { LatestArrivals, LatestArrivalsData } from './types';
 
-import Card from "./components/Card";
-import Loading from "./components/Card/Loading";
+import Card from './components/Card';
+import Loading from './components/Card/Loading';
 
 function App() {
   const fetchLatestArrivals = async (): Promise<LatestArrivals> =>
     await fetch(
-      "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products?collection=latest",
+      'https://www.greatfrontend.com/api/projects/challenges/e-commerce/products?collection=latest'
     ).then((res) => res.json());
 
   fetchLatestArrivals().then((data) => console.log(data));
 
   const { data, isError, isLoading } = useQuery<LatestArrivals, Error>({
-    queryKey: ["latestArrivals"],
+    queryKey: ['latestArrivals'],
     queryFn: fetchLatestArrivals,
   });
 
   if (isError) {
     // TODO: will probably need to show an error page?
-    console.error("There was an error fetching data.");
+    console.error('There was an error fetching data.');
   }
 
   // console.log("query", data?.data);
