@@ -62,7 +62,9 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
               key={`${name}-${color}`}
               aria-selected={selectedColor === color}
             >
-              <RiCheckFill className='size-3 opacity-0' />
+              <RiCheckFill
+                className={`size-3 opacity-0 ${color === 'white' && 'text-gray-500'}`}
+              />
             </button>
           ))}
         </div>
