@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import type { Image } from '../../types';
 import Img from '../Img';
 import { getImagesByColor, bgColorsMap } from '../../utils';
+import { RiCheckFill } from 'react-icons/ri';
 
 interface CardProps {
   name: string;
@@ -55,11 +56,14 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
         <div className='flex gap-2'>
           {colors.map((color: string) => (
             <button
-              className={`size-5 rounded-full ring ring-gray-200 focus:outline-3 focus:outline-blue-300 ${bgColorsMap[color]} cursor-pointer`}
+              className={`[&[aria-selected=true]]:ring-selected flex size-4 items-center justify-center rounded-full text-white ring ring-gray-200 hover:border-none hover:outline-2 hover:outline-indigo-100 focus:border-none focus:outline-4 focus:outline-indigo-100 [&[aria-selected=true]]:border-1 [&[aria-selected=true]_svg]:opacity-100 ${bgColorsMap[color]} cursor-pointer`}
               value={color}
               onClick={selectItemColor}
-              key={color}
-            />
+              key={`${name}-${color}`}
+              aria-selected={selectedColor === color}
+            >
+              <RiCheckFill className='size-3 opacity-0' />
+            </button>
           ))}
         </div>
       </section>

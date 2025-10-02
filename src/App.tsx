@@ -11,7 +11,7 @@ function App() {
       'https://www.greatfrontend.com/api/projects/challenges/e-commerce/products?collection=latest'
     ).then((res) => res.json());
 
-  fetchLatestArrivals().then((data) => console.log(data));
+  fetchLatestArrivals().then((data) => data);
 
   const { data, isError, isLoading } = useQuery<LatestArrivals, Error>({
     queryKey: ['latestArrivals'],
@@ -23,7 +23,7 @@ function App() {
     console.error('There was an error fetching data.');
   }
 
-  // console.log("query", data?.data);
+  console.log('query', data?.data);
   // console.log("is it loading?", isLoading);
   // console.log("isError", isError);
 
@@ -37,7 +37,7 @@ function App() {
             <h1 className='text-2xl font-medium tracking-wide'>
               Latest Arrivals
             </h1>
-            <a className='cursor-pointer rounded-sm border border-gray-200 px-4 py-2 text-sm shadow-sm/20 hover:bg-gray-100'>
+            <a className='size-lg cursor-pointer rounded-sm border border-gray-200 px-4 py-2 text-sm text-neutral-900 shadow-sm/20 hover:bg-gray-100'>
               View all
             </a>
           </section>

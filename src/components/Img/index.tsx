@@ -32,20 +32,22 @@ const Img = ({
     <section className='relative'>
       <div className='absolute'>
         <div className='flex w-[280px] justify-between'>
-          <div
-            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/5 items-center justify-center rounded-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
+          <button
+            aria-label='Previous image'
+            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/6 items-center justify-center rounded-tl-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
             onClick={() =>
               setSelectedImage(imagesByColor[getNextIndex('backward')])
             }
           >
             <RiArrowLeftWideLine className='bottom-8 size-7 text-black' />
-          </div>
-          <div
-            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/5 items-center justify-center rounded-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
+          </button>
+          <button
+            aria-label='Next image'
+            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/6 items-center justify-center rounded-tr-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
             onClick={() => setSelectedImage(imagesByColor[getNextIndex()])}
           >
             <RiArrowRightWideLine className='size-7 text-black' />
-          </div>
+          </button>
         </div>
       </div>
       <img
