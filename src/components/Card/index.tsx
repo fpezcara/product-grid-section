@@ -29,20 +29,21 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
     setSelectedImage(getImagesByColor(newColor, images)[0]);
   };
 
-  console.log('estoy en la card correcta', selectedImage);
   return (
-    <section className='pt-2'>
+    <section className='flex flex-col gap-y-3 self-stretch pt-2'>
       <Img
         selectedImage={selectedImage}
         name={name}
         setSelectedImage={setSelectedImage}
         imagesByColor={imagesByColor}
       />
-      <section className='mt-2 flex flex-col gap-y-3'>
-        <p className='text-xs font-light text-gray-500 capitalize'>
-          {selectedColor}
-        </p>
-        <p>{name}</p>
+      <section className='mt-1 flex flex-col gap-y-3'>
+        <div>
+          <p className='text-xs font-light text-gray-500 capitalize'>
+            {selectedColor}
+          </p>
+          <p>{name}</p>
+        </div>
         {salePrice !== listPrice ? (
           <div className='flex items-center gap-2 font-light tracking-wider text-gray-500'>
             <p>${salePrice}</p>

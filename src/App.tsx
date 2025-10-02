@@ -28,20 +28,20 @@ function App() {
   // console.log("isError", isError);
 
   return (
-    <main className='m-5 flex flex-col gap-10 rounded-lg bg-white px-20 py-25'>
+    <main className='m-4 flex flex-col rounded-lg bg-white px-3 py-12 md:px-4 md:py-16 lg:p-24'>
       {isLoading ? (
         <Loading />
       ) : (
         <>
           <section className='items-between flex justify-between'>
-            <h1 className='text-2xl font-medium tracking-wide'>
+            <h2 className='text-2xl font-semibold tracking-wide'>
               Latest Arrivals
-            </h1>
+            </h2>
             <a className='size-lg cursor-pointer rounded-sm border border-gray-200 px-4 py-2 text-sm text-neutral-900 shadow-sm/20 hover:bg-gray-100'>
               View all
             </a>
           </section>
-          <section className='grid grid-cols-4 gap-x-5 gap-y-12'>
+          <section className='mt-8 grid gap-x-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-y-12'>
             {data?.data.map((item: LatestArrivalsData) => (
               <Card
                 key={item.product_id}

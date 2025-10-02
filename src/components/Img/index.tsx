@@ -31,7 +31,7 @@ const Img = ({
   return (
     <section className='relative'>
       <div className='absolute'>
-        <div className='flex w-[280px] justify-between'>
+        <div className='flex justify-between md:w-[84em] lg:w-[70em]'>
           <button
             aria-label='Previous image'
             className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/6 items-center justify-center rounded-tl-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
@@ -39,7 +39,7 @@ const Img = ({
               setSelectedImage(imagesByColor[getNextIndex('backward')])
             }
           >
-            <RiArrowLeftWideLine className='bottom-8 size-7 text-black' />
+            <RiArrowLeftWideLine className='size-7 text-black' />
           </button>
           <button
             aria-label='Next image'
@@ -52,7 +52,7 @@ const Img = ({
       </div>
       <img
         loading='lazy'
-        className='h-[300px] w-[280px] rounded-lg object-cover'
+        className='h-[300px] w-[80em] rounded-lg object-cover md:w-[84em] lg:w-[70em]'
         alt={`${selectedImage.color}-${name}`}
         src={selectedImage.image_url}
       />
