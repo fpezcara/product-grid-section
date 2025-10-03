@@ -2,7 +2,14 @@
 
 A responsive product grid section built with modern web technologies as part of the [Great Frontend](https://www.greatfrontend.com/projects/challenges/product-grid-section) challenges.
 
-![Project Screenshot](public/Product-Grid-Section-10-03-2025_10_54_AM.png) <!-- Add a screenshot if you have one -->
+**Desktop**
+![Project Screenshot](public/desktop.png)
+
+**Tablet**
+![Project Screenshot](public/tablet.png)
+
+**Mobile**
+![Project Screenshot](public/mobile.png)
 
 ## 💻 Features
 

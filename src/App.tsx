@@ -26,7 +26,7 @@ const App = () => {
   }
 
   return (
-    <main className='m-4 flex h-screen flex-col rounded-lg bg-white px-3 py-12 md:px-4 md:py-16 lg:p-24'>
+    <main className='m-4 flex min-h-screen flex-col rounded-lg bg-white px-3 py-12 md:px-4 md:py-16 lg:p-24'>
       <section className='items-between flex justify-between'>
         <h2 className='text-2xl font-semibold tracking-wide'>
           Latest Arrivals
