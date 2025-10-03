@@ -34,7 +34,7 @@ const Img = ({
         <div className='flex justify-between'>
           <button
             aria-label='Previous image'
-            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/6 items-center justify-center rounded-tl-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50 focus:opacity-50 active:opacity-50`}
+            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/6 items-center justify-center rounded-tl-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
             onClick={() =>
               setSelectedImage(imagesByColor[getNextIndex('backward')])
             }
@@ -43,7 +43,7 @@ const Img = ({
           </button>
           <button
             aria-label='Next image'
-            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/6 items-center justify-center rounded-tr-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50 focus:opacity-50 active:opacity-50`}
+            className={`${isArrowHidden ? 'hidden' : 'flex'} h-[300px] w-1/6 items-center justify-center rounded-tr-lg bg-neutral-100 opacity-0 delay-150 duration-300 hover:cursor-pointer hover:opacity-50`}
             onClick={() => setSelectedImage(imagesByColor[getNextIndex()])}
           >
             <RiArrowRightWideLine className='size-7 text-black' />

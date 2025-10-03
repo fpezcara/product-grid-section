@@ -41,7 +41,7 @@ function App() {
               View all
             </a>
           </section>
-          <section className='mt-8 grid gap-x-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-y-12'>
+          <section className='mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4'>
             {data?.data.map((item: LatestArrivalsData) => (
               <Card
                 key={item.product_id}
