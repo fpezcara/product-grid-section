@@ -21,7 +21,6 @@ const App = () => {
   });
 
   if (isError) {
-    // TODO: will probably need to show an error page?
     console.error('There was an error fetching data.');
   }
 
@@ -35,9 +34,15 @@ const App = () => {
           View all
         </a>
       </section>
-      <section className='mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4'>
+      <section
+        className='mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4'
+        aria-label='Product image gallery'
+      >
         {data?.data.map((item: LatestArrivalsData) => (
-          <Suspense fallback={<Loading />}>
+          <Suspense
+            key={`loading-component-${item.product_id}`}
+            fallback={<Loading />}
+          >
             <CardComponent
               key={item.product_id}
               name={item.name}

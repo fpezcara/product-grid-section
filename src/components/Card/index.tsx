@@ -30,14 +30,14 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
   };
 
   return (
-    <section className='flex flex-col gap-y-3 self-stretch pt-2 pb-7'>
+    <article className='flex flex-col gap-y-3 self-stretch pt-2 pb-7'>
       <Img
         selectedImage={selectedImage}
         name={name}
         setSelectedImage={setSelectedImage}
         imagesByColor={imagesByColor}
       />
-      <section className='mt-1 flex flex-col gap-y-3'>
+      <div className='mt-1 flex flex-col gap-y-3'>
         <div>
           <p className='text-xs font-light text-gray-500 capitalize'>
             {selectedColor}
@@ -69,8 +69,8 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
             </button>
           ))}
         </div>
-      </section>
-    </section>
+      </div>
+    </article>
   );
 };
 

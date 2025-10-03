@@ -53,7 +53,7 @@ const Img = ({
       <img
         loading='lazy'
         className='h-[300px] w-[80em] rounded-lg object-cover md:w-[84em] lg:w-[70em]'
-        alt={`${selectedImage.color}-${name}`}
+        alt={`${selectedImage.color} ${name}`}
         src={selectedImage.image_url}
       />
     </section>
