@@ -1,77 +1,53 @@
-# React + TypeScript + Vite
+# 🛍️ Product Grid Section
 
-This template provides a minimal setup to get React working in Vite with HMR and
-some ESLint rules.
+A responsive product grid section built with modern web technologies as part of the [Great Frontend](https://www.greatfrontend.com/projects/challenges/product-grid-section) challenges.
 
-Currently, two official plugins are available:
+![Project Screenshot](public/Product-Grid-Section-10-03-2025_10_54_AM.png) <!-- Add a screenshot if you have one -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc)
-  uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Features
 
-## Expanding the ESLint configuration
+- **Responsive Design** - Optimized for mobile, tablet, and desktop
+- **Image Gallery** - Interactive image carousel with color variants
+- **Product Information** - Display product name, colors, and pricing
+- **Loading States** - Elegant skeleton loading during data fetch
+- **Type Safety** - Full TypeScript implementation
+- **Performance Optimized** - TanStack Query for efficient data fetching and caching
 
-If you are developing a production application, we recommend updating the
-configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework**: React 18
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Data Fetching**: TanStack Query (React Query)
+- **Icons**: React Icons
+- **Deployment**: Vercel
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/product-grid-section.git
+   cd product-grid-section
+   ```
+2. **Install dependencies**
+   ```
+   npm run i
+   ```
+3. **Start development server**
+   ```
+   npm run dev
+   ```
 
-You can also install
-[eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x)
-and
-[eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom)
-for React-specific lint rules:
+## 🚀 Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+The project is deployed in Vercel: [Live demo](https://my-product-grid-mocha.vercel.app/)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+## 🧪 Challenges & Learnings
+
+This project helped me practice:
+
+- Advanced React patterns with TypeScript
+- Efficient data fetching strategies with TanStack Query
+- Responsive design implementation with Tailwind CSS
+- Performance optimization techniques
