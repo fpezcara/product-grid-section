@@ -26,11 +26,11 @@ const App = () => {
 
   return (
     <main className='m-4 flex min-h-screen flex-col rounded-lg bg-white px-3 py-12 md:px-4 md:py-16 lg:p-24'>
-      <section className='items-between flex justify-between'>
-        <h2 className='text-2xl font-semibold tracking-wide'>
+      <section className='items-between flex justify-between text-neutral-900'>
+        <p className='text-3xl font-semibold text-neutral-900'>
           Latest Arrivals
-        </h2>
-        <a className='size-lg cursor-pointer rounded-sm border border-gray-200 px-4 py-2 text-sm text-neutral-900 shadow-sm/20 hover:bg-gray-100'>
+        </p>
+        <a className='size-lg cursor-pointer rounded-sm border border-neutral-200 px-4 py-2 text-base font-medium text-neutral-900 shadow-sm/20 hover:bg-gray-100'>
           View all
         </a>
       </section>

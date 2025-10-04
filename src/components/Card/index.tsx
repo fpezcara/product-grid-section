@@ -30,7 +30,7 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
   };
 
   return (
-    <article className='flex flex-col gap-y-3 self-stretch pt-2 pb-7'>
+    <article className='flex min-h-[29em] flex-col gap-y-3 self-stretch pt-2 pb-7'>
       <Img
         selectedImage={selectedImage}
         name={name}
@@ -39,20 +39,18 @@ const Card = ({ name, images, colors, listPrice, salePrice }: CardProps) => {
       />
       <div className='mt-1 flex flex-col gap-y-3'>
         <div>
-          <p className='text-xs font-light text-gray-500 capitalize'>
+          <p className='text-xs font-light text-neutral-600 capitalize'>
             {selectedColor}
           </p>
-          <p>{name}</p>
+          <p className='text-lg font-medium text-neutral-900'>{name}</p>
         </div>
         {salePrice !== listPrice ? (
-          <div className='flex items-center gap-2 font-light tracking-wider text-gray-500'>
+          <div className='flex items-center gap-2 text-lg text-neutral-500'>
             <p>${salePrice}</p>
-            <p className='text-sm line-through'>${listPrice}</p>
+            <p className='text-xs line-through'>${listPrice}</p>
           </div>
         ) : (
-          <p className='font-light tracking-wide text-slate-500'>
-            ${listPrice}
-          </p>
+          <p className='text-lg text-neutral-500'>${listPrice}</p>
         )}
         <div className='flex gap-2'>
           {colors.map((color: string) => (
